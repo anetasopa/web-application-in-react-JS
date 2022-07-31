@@ -1,0 +1,33 @@
+.product {
+  padding: 20px 40px;
+  border: 1px solid red;
+  margin-bottom: 20px;
+  height: 160px;
+  flex: 5;
+}
+
+.product-field {
+  font-size: 20px;
+}
+
+.product-label {
+  font-weight: bold;
+  font-size: 25px;
+  margin-right: 10px;
+}
+
+.container {
+  max-width: 1480px;
+  margin: auto;
+  height: 1000px;
+}
+
+.page {
+  margin-top: 50px;
+}
+
+.product-list {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
