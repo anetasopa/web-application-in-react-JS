@@ -101,13 +101,13 @@ class Animal {
 
 class Cat extends Animal {
   noise() {
-    return "miow:" + this.name;
+    return "miow: " + this.name;
   }
 }
 
 class Dog extends Animal {
   noise() {
-    return "bark:" + this.name;
+    return "bark: " + this.name;
   }
 }
 

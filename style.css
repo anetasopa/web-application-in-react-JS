@@ -1,17 +1,10 @@
 .product {
+  margin: 20px;
   padding: 20px 40px;
-  border: 1px solid red;
   margin-bottom: 20px;
-  height: 160px;
+  height: 180px;
   flex: 1;
-}
-
-#product2 {
-  flex: 2;
-}
-
-#product3 {
-  flex: 2;
+  border: 1px solid red;
 }
 
 .product-field {
@@ -25,17 +18,64 @@
 }
 
 .container {
-  max-width: 1480px;
+  max-width: 1000px;
   margin: auto;
-  height: 1000px;
+  height: 800px;
 }
 
 .page {
   margin-top: 50px;
+  max-width: 1000px;
+  background-color: antiquewhite;
+  margin: 0 auto;
 }
 
 .product-list {
   height: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+}
+
+.app-navbar {
+  display: flex;
+  font-size: 25px;
+  padding: 20px;
+  background-color: aqua;
+  justify-content: space-between;
+  margin-bottom: 100px;
+  font-weight: bold;
+  display: flex;
+}
+
+.app-footer {
+  display: flex;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 20px;
+  background-color: black;
+  justify-content: center;
+  margin-bottom: 100px;
+  color: white;
+  bottom: 0;
+}
+
+.content-wrapper {
+  padding: 30px;
+}
+
+.selection-title {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.product-row {
+  display: flex;
+}
+
+.product1 .product2 {
+  flex: 1;
+}
+
+.product3 .product4 {
+  flex: 1;
 }
