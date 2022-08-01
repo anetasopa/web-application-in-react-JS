@@ -83,3 +83,40 @@ const rectangleArea = rectangle.computeArea();
 
 console.log("Area of square is: ", squareArea);
 console.log("Area of rectangle is: ", rectangleArea);
+
+
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  noise() {
+    return "Generic noise: " + this.name;
+  }
+
+  callAnimal() {
+    console.log("Come here: " + this.noise());
+  }
+}
+
+class Cat extends Animal {
+  noise() {
+    return "miow:" + this.name;
+  }
+}
+
+class Dog extends Animal {
+  noise() {
+    return "bark:" + this.name;
+  }
+}
+
+const animals = [
+  new Cat("alex"),
+  new Cat("bobo"),
+  new Dog("kuku")
+];
+
+animals.forEach(animal => {
+  animal.callAnimal();
+});
