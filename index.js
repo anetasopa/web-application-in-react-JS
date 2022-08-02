@@ -2,6 +2,18 @@ runApp();
 
 function runApp() {
 
+  const product = document.getElementById("product1");
+
+  function clickHandler() {
+    console.log("Hello there!")
+  }
+
+  product.addEventListener("click", clickHandler());
+
+  // product.addEventListener("click", function() {
+  //   console.log("Hello there!")
+  // }
+
   class Product {
     constructor(
       name = "Default Name",
