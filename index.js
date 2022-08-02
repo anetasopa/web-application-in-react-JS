@@ -14,6 +14,27 @@ function runApp() {
   //   console.log("Hello there!")
   // }
 
+  function callbackFunction(message) {
+    console.log(message);
+  }
+
+  function myCustomFunction(fn) {
+    fn("Mu custon function");
+  }
+
+  myCustomFunction(callbackFunction); 
+
+  const functionRef = function() {
+    console.log("Function reference")
+  }
+
+  functionRef();
+
+  const functionRef2 = callbackFunction;
+
+  myCustomFunction(functionRef2);
+
+
   class Product {
     constructor(
       name = "Default Name",
