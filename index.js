@@ -2,37 +2,57 @@ runApp();
 
 function runApp() {
 
-  const product = document.getElementById("product1");
+  const productElement1 = document.getElementById("product1");
+  const productElement2 = document.getElementById("product2");
+  const productElement3 = document.getElementById("product3");
+  const productElement4 = document.getElementById("product4");
+
+  const clickHandler2 = createClickHandler("Hi there!");
+
+  productElement1.addEventListener("click", clickHandler());
+  productElement2.addEventListener("click", clickHandler2());
+  productElement3.addEventListener("click", createClickHandler("Third element"));
+  productElement4.addEventListener("click", function() {
+    console.log("An annonymous function");
+  });
 
   function clickHandler() {
     console.log("Hello there!")
   }
 
-  product.addEventListener("click", clickHandler());
+  function createClickHandler(message) {
+    const name = "Anna";
+    return function() {
+      console.log(message + " " + name);
+    }
+  }
+
 
   // product.addEventListener("click", function() {
   //   console.log("Hello there!")
   // }
 
-  function callbackFunction(message) {
-    console.log(message);
-  }
 
-  function myCustomFunction(fn) {
-    fn("Mu custon function");
-  }
+  // -------- CALLBACK FUNCTION ------------
+  // function callbackFunction(message) {
+  //   console.log(message);
+  // }
 
-  myCustomFunction(callbackFunction); 
+  // function myCustomFunction(fn) {
+  //   fn("Mu custon function");
+  // }
 
-  const functionRef = function() {
-    console.log("Function reference")
-  }
+  // myCustomFunction(callbackFunction); 
 
-  functionRef();
+  // const functionRef = function() {
+  //   console.log("Function reference")
+  // }
 
-  const functionRef2 = callbackFunction;
+  // functionRef();
 
-  myCustomFunction(functionRef2);
+  // const functionRef2 = callbackFunction;
+
+  // myCustomFunction(functionRef2);
 
 
   class Product {
