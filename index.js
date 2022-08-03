@@ -7,25 +7,58 @@ function runApp() {
   const productElement3 = document.getElementById("product3");
   const productElement4 = document.getElementById("product4");
 
-  const clickHandler2 = createClickHandler("Hi there!");
+  // ------ 1 --------
+  // function createClickHandler(message, name) {
+  //   const name = "Anna";
+  //   return function() {
+  //     console.log(message + " " + name);
+  //   }
+  // }
+
+  // ------ 2 --------
+  // const createClickHandler = (message, name) => {
+  //   const name = "Anna";
+  //   return () => {
+  //     console.log(message + " " + name);
+  //   }
+  // }
+
+  // ------ 3 --------
+  // const createClickHandler = (message, name) => () => {
+  //     const name = "Anna";
+  //     console.log(message + " " + name);
+  // }
+
+  // ------ 4 --------
+  // const createClickHandler = (message, name) => {
+  //   return () => {
+  //     console.log(message + " " + name)
+  //   }
+  // }
+
+  // ------ 5 --------
+  const createClickHandler = (message, name) => () => console.log(message + " " + name);
+
+
+  // ------ 1 --------
+  // const clickHandler = () => {
+  //   console.log("Hello there!");
+  // }
+
+  // ------ 2 --------
+  const clickHandler = () => console.log("Hello there!");
+  const clickHandler2 = createClickHandler("Hi there!", "Magda");
 
   productElement1.addEventListener("click", clickHandler());
   productElement2.addEventListener("click", clickHandler2());
-  productElement3.addEventListener("click", createClickHandler("Third element"));
+  productElement3.addEventListener("click", createClickHandler("Third element", "Kate"));
   productElement4.addEventListener("click", function() {
-    console.log("An annonymous function");
+    console.log("An annonymous function"); 
   });
 
-  function clickHandler() {
-    console.log("Hello there!")
-  }
-
-  function createClickHandler(message) {
-    const name = "Anna";
-    return function() {
-      console.log(message + " " + name);
-    }
-  }
+  // function clickHandler() {
+  //   console.log("Hello there!")
+  // }
 
 
   // product.addEventListener("click", function() {
