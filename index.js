@@ -3,6 +3,41 @@ runApp();
 function runApp() {
 
   const productElements = document.getElementsByClassName("product");
+  const container = document.getElementById("productContainer");
+
+  const createProductRow = () => {
+    const row = document.createElement("div");
+    row.classList.add("product-row");
+    return row;
+  }
+
+  const createProductElement = () => {
+    const productElement = document.createElement("div");
+    const productField = document.createElement("div");
+    const productLabel = document.createElement("span");
+
+    productElement.classList.add("product");
+    productField.classList.add("product-field");
+    productLabel.classList.add("product-label");
+
+    productLabel.innerHTML = "Name: " ;
+
+    const text = document.createTextNode("Laptop");
+
+    productField.appendChild(productLabel);
+    productField.appendChild(text);
+    productElement.appendChild(productField);
+
+    return productElement;
+  }
+
+  const row =  createProductRow();
+  const productElement = createProductElement();
+
+
+  container.appendChild(row);
+  row.appendChild(productElement);
+
 
   class Product {
     constructor(
