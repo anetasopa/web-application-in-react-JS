@@ -15,4 +15,24 @@ function runApp() {
     const productElement = createProductElement(product);
     container.appendChild(productElement);
   })  
+
+  const numbers = [1, 2, 3, 4, 5];
+  const animals = ["dog", "cat", "elephant"];
+
+  function displayProduct(product, index) {
+    console.log('index', index)
+    console.log('product', product)
+  } 
+
+  products.customForEach(displayProduct);
+
+  numbers.customForEach(function(number, index) {
+    console.log('index', index)
+    console.log('number', number)
+  });
+
+  animals.customForEach((animal, index) => {
+    console.log('index', index)
+    console.log('animal', animal)
+  }); 
 }
