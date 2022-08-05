@@ -1,20 +1,21 @@
-const _createElement = (elementType, classList) => {
+function _createElement(elementType, classList) {
   const element = document.createElement(elementType);
   element.classList.add(classList)
   return element;
 }
 
-const createProductElement = (product) => {
+function createProductElement(product) {
   const productElement = _createElement("div", "product");
 
-  const productLabels = ["Name", "Type", "Price", "Currency", "Image"];
+  // const labels = ["Name", "Type", "Price", "Currency", "Image"];
+  const labels = Object.keys(product);
 
-  productLabels.forEach(label => {
+  labels.forEach(label => {
     const productField = _createElement("div", "product-field");
     const productLabel = _createElement("span", "product-label");
 
-    productLabel.innerHTML = `${label}`;
-    const text = document.createTextNode(product[label.toLowerCase()]);
+    productLabel.innerHTML = `${label[0].toUpperCase() + label.substring(1) + ": "}`;
+    const text = document.createTextNode(product[label]);
 
     productField.appendChild(productLabel);
     productField.appendChild(text);
