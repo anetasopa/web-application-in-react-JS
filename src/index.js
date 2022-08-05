@@ -15,34 +15,4 @@ function runApp() {
     const productElement = createProductElement(product);
     container.appendChild(productElement);
   })  
-
-  const numbers = [1, 2, 3, 4, 5];
-
-  const number = numbers.customMap((number) => {
-    return number;
-  });
-
-  const productName = products.customMap((product) => {
-    return product.name;
-  });
-
-  console.log(number);
-  console.log(productName);
-
-  // function displayProduct(product, index) {
-  //   console.log('index', index)
-  //   console.log('product', product)
-  // } 
-
-  // products.customForEach(displayProduct);
-
-  // numbers.customForEach(function(number, index) {
-  //   console.log('index', index)
-  //   console.log('number', number)
-  // });
-
-  // animals.customForEach((animal, index) => {
-  //   console.log('index', index)
-  //   console.log('animal', animal)
-  // }); 
 }
