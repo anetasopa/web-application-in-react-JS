@@ -33,10 +33,27 @@ function getProductData() {
   return data;
 }
 
-function getProductDataAsync(callback) {
-  return setTimeout(function() {
-    callback(data);
-  }, 3000);
+function getProductDataAsync() {
+  return new Promise(function(resolve, reject) {
+    setTimeout(function() {
+
+      if (true) {
+        reject(new Error("Oooops some error!!!!"));
+      }
+      
+      const response = {
+        json: async function() {
+          return new Promise(function(resolve) {
+            setTimeout(function() {
+              resolve(data);
+            }, 20)
+          })
+        }        
+      }
+      resolve(response);
+
+    }, 1000);
+  })
 }
 
 
