@@ -30,3 +30,11 @@
   grid-template-columns: auto auto auto;
   grid-gap: 10px;
 }
+
+.product.is-on-stock {
+  border-color: green;
+}
+
+.product.is-not-on-stock {
+  border-color: red;
+}
