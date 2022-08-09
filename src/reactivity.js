@@ -1,26 +1,25 @@
-function _createElement(elementType, classList) {
-  const element = document.createElement(elementType);
-  element.classList.add(classList)
-  return element;
-}
+const ReactivityDOM = (function() {
+    function render(child) {  
+      const app = document.getElementById("app");
+      veryUnsecureFunction();
+  
+      app.insertAdjacentHTML(
+        "beforeend", 
+        child
+      ); 
+    }
 
-function createProductElement(product) {
-  const productElement = _createElement("div", "product");
+    function veryUnsecureFunction() {
+      console.log("Unsecure function");
+    }
 
-  // const labels = ["Name", "Type", "Price", "Currency", "Image"];
-  const labels = Object.keys(product);
+    return {
+      render
+    }
+})()
 
-  labels.forEach(label => {
-    const productField = _createElement("div", "product-field");
-    const productLabel = _createElement("span", "product-label");
-
-    productLabel.innerHTML = `${label[0].toUpperCase() + label.substring(1) + ": "}`;
-    const text = document.createTextNode(product[label]);
-
-    productField.appendChild(productLabel);
-    productField.appendChild(text);
-    productElement.appendChild(productField);
-  })
-
-  return productElement;
-}
+// This is my tiny example framework, I can call ReactivityDOM
+// Framework decides the rules how to work with framework, 
+// what functions are accesible (API)
+// Benefits: easier to work, to collaborate, faster to develop,
+// I can focus on bussines logic of your app instead of handling DOM or html elements
