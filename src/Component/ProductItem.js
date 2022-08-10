@@ -1,4 +1,4 @@
-function ProductItem({ product }) {
+export function ProductItem({ product }) {
 
   const isOnStockClass = product.isOnStock ? "is-on-stock" : "is-not-on-stock";
 

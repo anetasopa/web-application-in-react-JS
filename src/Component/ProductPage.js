@@ -1,4 +1,4 @@
-function ProductPage({children}) {
+export  function ProductPage({children}) {
   return `
     <div class="page">
       <div class="container">
