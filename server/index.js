@@ -1,10 +1,16 @@
-const http = require("http");
+const express = require("express");
+const path = require("path");
+const app = express();
 
-const server = http.createServer(function(req, res) {
-  res.writeHead(200, {"Content-Type": "text/html"});
-  res.write("<html><body><p>This is home page</p></body></html>");
-  res.end();
-}) 
+const PORT = process.env.PORT || 8080;
 
-server.listen(8080);
-console.log("Server is running on port 8080");
+const buildPath = path.join(__dirname, "..", "dist");
+app.use(express.static(buildPath));
+
+app.get("*", (req, res) => {
+  res.sendFile(buildPath + "/index.html");
+})
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
