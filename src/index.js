@@ -1,4 +1,4 @@
-(function() {
+(function( ) {
    runApp();
  
   async function runApp() {
@@ -12,6 +12,7 @@
     }
   }
 })()
+
 
 // async function runApp() {
 //   getProductDataAsync()
